@@ -53,7 +53,15 @@ TODO:
 
 - simulation
   - finish counts
-- test
-  - connect metamask
-  - copy/edit App.js from pcs-prediction-bot
-  - write tests
+- frontend
+  - DOING: write tests (simulation => don't placeBet)
+    - connect metamask button and show address, chain, balance
+    - show current epoch, last 3 epochs
+      - each epoch has locked price, current price, closed price, payout up, payou down, prize pool
+    - show next epoch bet amount
+    - start bot
+      - when epoch changes place first bet
+      - check bet result and set next bet (this is has to be a few seconds before 5 minutes)
+      - write down logs each time: if won/lost, amount bet, balance, epoch(send them to backend?) - check them with sim-rounds.txt
+- if tests are ok put in production to run production tests @.../prediction-bot
+- if prod tests are ok go production-stable
