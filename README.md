@@ -37,6 +37,18 @@ Total rounds: 1151
 Time to reach goal: 3.996527777777778 days
 ```
 
+#### example
+
+next epoch = 114836 = n
+
+bet up (green) @1.5x
+
+locked price = closed price of epoch 114835 = n-1
+
+- what if we just bet on green everytime? => we don't care about closed price etc
+
+- how do we check if we got it right and set next bet? => check a few seconds before it ends and bet on next one
+
 TODO:
 
 - simulation
