@@ -4,8 +4,6 @@ Predict whether BNB or CAKE price will rise or fall
 
 Time = every 5 mins
 
-Payout is variable depends on how many are betting => min = 1
-
 amount = the amount you start with = 0.2
 
 initial bet = 0.003
@@ -41,10 +39,9 @@ Time to reach goal: 3.996527777777778 days
 
 TODO:
 
-- create repository
 - simulation
   - finish counts
 - test
   - connect metamask
   - copy/edit App.js from pcs-prediction-bot
-  - write test
+  - write tests
