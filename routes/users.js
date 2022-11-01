@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const { martingale } = require("../utils/martingale");
 
-martingale.simulation();
+// martingale.simulation();
 
 // check epoch and wait for next one
 

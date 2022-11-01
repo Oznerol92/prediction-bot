@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: 3vw;
 }
 
 .App-logo {
@@ -35,4 +36,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.current-epoch,
+.bnb-details {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
 }

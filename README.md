@@ -65,3 +65,7 @@ TODO:
       - write down logs each time: if won/lost, amount bet, balance, epoch(send them to backend?) - check them with sim-rounds.txt
 - if tests are ok put in production to run production tests @.../prediction-bot
 - if prod tests are ok go production-stable
+
+NOTES:
+
+- there is a delay of 15 seconds when epoch closes before we get new epoch
