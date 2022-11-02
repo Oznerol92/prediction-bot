@@ -44,3 +44,10 @@
   flex-direction: column;
   margin: 50px;
 }
+
+.select-div {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin: 20px;
+}

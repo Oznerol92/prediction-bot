@@ -49,7 +49,7 @@ locked price = closed price of epoch 114835 = n-1
 
 - how do we check if we got it right and set next bet? => check a few seconds before it ends and bet on next one
 
-TODO:
+TODO: -lor
 
 - simulation
   - finish counts
@@ -65,6 +65,18 @@ TODO:
       - write down logs each time: if won/lost, amount bet, balance, epoch(send them to backend?) - check them with sim-rounds.txt
 - if tests are ok put in production to run production tests @.../prediction-bot
 - if prod tests are ok go production-stable
+
+TODO: -vito
+
+- change selected in state in App.js from 'home' to 'vitto' => this is to keep selected 'vitto' on changes - line 58 `const [selected, setSelected] = useState("home");`
+- try to recreate the front end - check in App.js from line 222 to 249 and then you need to write css in vitto.css. Have a look at App.css and className in App.js => example change the color of what's inside `<div className="vitto-div">Vitto</div>;` from vitto.css
+
+```
+.vitto-div {
+  display: flex;
+  justify-content: center;
+}
+```
 
 NOTES:
 

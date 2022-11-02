@@ -8,6 +8,7 @@ import { PCS_ABI, ORACLE_ABI } from "./utils/ABIs";
 
 import "./App.css";
 import { useEffect } from "react";
+import Vitto from "./Components/Vitto/Vitto";
 
 let timer;
 
@@ -53,6 +54,8 @@ function App() {
 
   const [amountWon, setAmountWon] = useState(0);
   const [amountLost, setAmountLost] = useState(0);
+
+  const [selected, setSelected] = useState("home");
 
   const connectMetamask = async () => {
     if (typeof window.ethereum !== "undefined") {
@@ -194,6 +197,10 @@ function App() {
     }
   };
 
+  const handleSelected = (e) => {
+    setSelected(e.target.value);
+  };
+
   useEffect(() => {
     console.log(`New epoch: ${currentEpoch}`);
     if (account) {
@@ -202,30 +209,48 @@ function App() {
   });
 
   return (
-    <div className="App">
-      {/* <PredictionBot /> */}
-      <button onClick={connectMetamask}>connect metamask</button>
-      <div>Address: {account}</div>
-      <div>Chain id: {chain_id}</div>
-      <div>Balance BNB: {balance}</div>
-      <div>Amount winning/losing: {amountWon - amountLost}</div>
-      <div className="current-epoch">
-        <span>Current epoch: {currentEpoch}</span>
-        <span>Current bet: {currentBet}</span>
+    <>
+      <div className="select-div">
+        <button value={"home"} onClick={handleSelected}>
+          home
+        </button>
+        <button value={"vitto"} onClick={handleSelected}>
+          vitto
+        </button>
       </div>
-      <div className="bnb-details">
-        <span>BNB price</span>
-        <span>Latest: {latestPrice}</span>
-        <span>Beg: {begPrice}</span>
-        <span>End: {endPrice}</span>
-      </div>
-      <div>Latest epoch, latest bet, latest result</div>
-      <div>W/L ratio</div>
-      <div>W/L net</div>
-      <button onClick={startBot}>start bot</button>
-      <button onClick={stopBot}>stop bot</button>
-      <div>Round: {round}</div>
-    </div>
+      {selected === "home" ? (
+        <div>
+          <div className="App">
+            {/* <PredictionBot /> */}
+            <div>
+              <button onClick={connectMetamask}>connect metamask</button>
+              <div>Address: {account}</div>
+              <div>Chain id: {chain_id}</div>
+              <div>Balance BNB: {balance}</div>
+              <div>Amount winning/losing: {amountWon - amountLost}</div>
+              <div className="current-epoch">
+                <span>Current epoch: {currentEpoch}</span>
+                <span>Current bet: {currentBet}</span>
+              </div>
+              <div className="bnb-details">
+                <span>BNB price</span>
+                <span>Latest: {latestPrice}</span>
+                <span>Beg: {begPrice}</span>
+                <span>End: {endPrice}</span>
+              </div>
+              <div>Latest epoch, latest bet, latest result</div>
+              <div>W/L ratio</div>
+              <div>W/L net</div>
+              <button onClick={startBot}>start bot</button>
+              <button onClick={stopBot}>stop bot</button>
+              <div>Round: {round}</div>
+            </div>
+          </div>
+        </div>
+      ) : selected === "vitto" ? (
+        <Vitto />
+      ) : null}
+    </>
   );
 }
 
